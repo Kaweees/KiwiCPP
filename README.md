@@ -19,12 +19,12 @@
 
 </div>
 
-<a href="https://github.com/Kaweees/cpp-template">
+<a href="https://github.com/Kaweees/KiwiCPP">
   <img alt="C++ Logo" src="assets/img/cpp.svg" align="right" width="150">
 </a>
 
 <div align="left">
-  <h1><em><a href="https://github.com/Kaweees/cpp-template">~cpp-template</a></em></h1>
+  <h1><em><a href="https://github.com/Kaweees/KiwiCPP">~KiwiCPP</a></em></h1>
 </div>
 
 <!-- ABOUT THE PROJECT -->
@@ -67,13 +67,25 @@ To get a local copy of the project up and running on your machine, follow these 
 1. Clone the project repository
 
    ```sh
-   git clone https://github.com/Kaweees/cpp-template.git
-   cd graphics
+   git clone https://github.com/Kaweees/KiwiCPP.git
+   cd KiwiCPP
    ```
 
-2. Build and execute the project
+2. Create a fresh build directory and navigate to it
    ```sh
-   clear && cmake CMakeLists.txt && make && ./target/release/cpp-template
+   rm -rf build
+   mkdir build
+   cd build
+   ```
+
+3. 
+   ```sh
+   clear && cmake -S .. -B . -DCMAKE_BUILD_TYPE=Debug
+   ```
+
+4. Build the project
+   ```sh
+   cmake --build ..
    ```
 
 <!-- PROJECT FILE STRUCTURE -->
@@ -97,12 +109,12 @@ The source code for my website is distributed under the terms of the GNU General
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/Kaweees/cpp-template.svg?style=for-the-badge
-[contributors-url]: https://github.com/Kaweees/cpp-template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Kaweees/cpp-template.svg?style=for-the-badge
-[forks-url]: https://github.com/Kaweees/cpp-template/network/members
-[stars-shield]: https://img.shields.io/github/stars/Kaweees/cpp-template.svg?style=for-the-badge
-[stars-url]: https://github.com/Kaweees/cpp-template/stargazers
+[contributors-shield]: https://img.shields.io/github/contributors/Kaweees/KiwiCPP.svg?style=for-the-badge
+[contributors-url]: https://github.com/Kaweees/KiwiCPP/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Kaweees/KiwiCPP.svg?style=for-the-badge
+[forks-url]: https://github.com/Kaweees/KiwiCPP/network/members
+[stars-shield]: https://img.shields.io/github/stars/Kaweees/KiwiCPP.svg?style=for-the-badge
+[stars-url]: https://github.com/Kaweees/KiwiCPP/stargazers
 
 <!-- MARKDOWN SHIELD BAGDES & LINKS -->
 <!-- https://github.com/Ileriayo/markdown-badges -->
