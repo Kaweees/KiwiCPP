@@ -1,5 +1,5 @@
-#include "my_project/library.hpp"
+#include "../include/kiwicpp/library.hpp"
 
-namespace my_project {
+namespace KiwiCPP {
 int add(int a, int b) { return a + b; }
-}  // namespace my_project
+}  // namespace KiwiCPP

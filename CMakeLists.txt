@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(my_project VERSION 1.0.0 LANGUAGES CXX)
+project(kiwicpp VERSION 1.0.0 LANGUAGES CXX)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
