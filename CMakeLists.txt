@@ -1,4 +1,5 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR) # Set the minimum required version of CMake
+
 project(kiwicpp VERSION 1.0.0 LANGUAGES CXX)
 
 # Set C++ standard
@@ -11,6 +12,12 @@ add_subdirectory(src)
 # Optional builds
 option(BUILD_EXAMPLES "Build examples" ON)
 option(BUILD_TESTS "Build tests" ON)
+option(BENCHMARK "Build with benchmark mode" OFF)
+
+# Benchmark mode
+if(BENCHMARK)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE BENCHMARK_MODE)
+endif()
 
 # Examples
 if(BUILD_EXAMPLES)
@@ -24,7 +31,8 @@ if(BUILD_TESTS)
     FetchContent_Declare(
         googletest
         GIT_REPOSITORY https://github.com/google/googletest.git
-        GIT_TAG release-1.12.1
+        GIT_TAG "v1.15.2"
+        GIT_PROGRESS TRUE
     )
     FetchContent_MakeAvailable(googletest)
     enable_testing()
