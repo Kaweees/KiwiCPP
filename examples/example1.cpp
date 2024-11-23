@@ -1,8 +1,8 @@
 #include <iostream>
-
-#include "kiwicpp/library.hpp"
+#include <kiwicpp/kiwicpp.hpp>
+using namespace kiwicpp;
 
 int main() {
-  std::cout << "Sum: " << KiwiCPP::add(2, 3) << std::endl;
+  std::cout << "Sum: " << add(2, 3) << std::endl;
   return 0;
 }
