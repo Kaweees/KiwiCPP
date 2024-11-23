@@ -61,6 +61,8 @@ obj/
 CMakeFiles/
 CPackSourceConfig.cmake 
 CMakeSettings.json
+CTestTestfile.cmake
+*_tests[1-9]*_include.cmake
 
 # Build files
 .cache/
