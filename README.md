@@ -57,7 +57,6 @@ Before attempting to build this project, make sure you have [GNU Make](https://w
 
 Additionally, if you wish to utilize the GPU acceleration features, you will need to have [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) or [Apple Metal](https://developer.apple.com/metal/cpp/) installed on your machine.
 
-
 you will need a C++ compiler that supports C++13, and a CUDA compatible GPU if you wish to use the CUDA acceleration features.
 
 ### Installation
@@ -72,18 +71,24 @@ To get a local copy of the project up and running on your machine, follow these 
    ```
 
 2. Create a fresh build directory and navigate to it
+
    ```sh
    rm -rf build
    mkdir build
    cd build
    ```
 
-3.
+3. Configure the build system
+
    ```sh
+   # Use for debugging
    clear && cmake -S .. -B . -DCMAKE_BUILD_TYPE=Debug
+   # Use for releases
+   clear && cmake -S .. -B . -DCMAKE_BUILD_TYPE=Release
    ```
 
 4. Build the project
+
    ```sh
    cmake --build ..
    ```
