@@ -29,7 +29,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-A template for creating C++13 projects accelerated with CUDA/Apple Metal
+A template for creating C++ header-only libraries accelerated with CUDA/Apple Metal
 
 ### Built With
 
@@ -78,7 +78,7 @@ To get a local copy of the project up and running on your machine, follow these 
    cd build
    ```
 
-3. 
+3.
    ```sh
    clear && cmake -S .. -B . -DCMAKE_BUILD_TYPE=Debug
    ```
