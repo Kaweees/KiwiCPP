@@ -36,6 +36,10 @@ A template for creating C++ header-only libraries accelerated with CUDA/Apple Me
 [![C++][C++-shield]][C++-url]
 [![CUDA][CUDA-shield]][CUDA-url]
 [![Apple][Apple-shield]][Apple-url]
+[![NixOS][NixOS-shield]][NixOS-url]
+[![CMake][CMake-shield]][CMake-url]
+[![GNU Make][GNU-Make-shield]][GNU-Make-url]
+[![Codecov][Codecov-shield]][Codecov-url]
 [![GitHub Actions][github-actions-shield]][github-actions-url]
 
 <!-- PROJECT PREVIEW -->
@@ -53,11 +57,9 @@ A template for creating C++ header-only libraries accelerated with CUDA/Apple Me
 
 ### Prerequisites
 
-Before attempting to build this project, make sure you have [GNU Make](https://www.gnu.org/software/make/), and [CMake](https://cmake.org) installed on your machine.
+Before attempting to build this project, make sure you have [GNU Make](https://www.gnu.org/software/make/), and [CMake](https://cmake.org) installed on your machine. These can be also installed via the project's [Nix](https://nixos.org/download.html) environment.
 
-Additionally, if you wish to utilize the GPU acceleration features, you will need to have [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) or [Apple Metal](https://developer.apple.com/metal/cpp/) installed on your machine.
-
-you will need a C++ compiler that supports C++13, and a CUDA compatible GPU if you wish to use the CUDA acceleration features.
+Additionally, if you wish to utilize the GPU acceleration features, you will need to have the [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) or [Apple Metal](https://developer.apple.com/metal/cpp/) installed on your machine.
 
 ### Installation
 
@@ -70,27 +72,16 @@ To get a local copy of the project up and running on your machine, follow these 
    cd KiwiCPP
    ```
 
-2. Create a fresh build directory and navigate to it
+2. Install the project dependencies
 
    ```sh
-   rm -rf build
-   mkdir build
-   cd build
+   nix-shell
    ```
 
-3. Configure the build system
+3. Create a fresh build directory and navigate to it
 
    ```sh
-   # Use for debugging
-   clear && cmake -S .. -B . -DCMAKE_BUILD_TYPE=Debug
-   # Use for releases
-   clear && cmake -S .. -B . -DCMAKE_BUILD_TYPE=Release
-   ```
-
-4. Build the project
-
-   ```sh
-   cmake --build ..
+   just clean build
    ```
 
 <!-- PROJECT FILE STRUCTURE -->
@@ -129,5 +120,13 @@ The source code for my website is distributed under the terms of the GNU General
 [CUDA-url]: https://developer.nvidia.com/cuda-zone
 [Apple-shield]: https://img.shields.io/badge/metal-%23008080.svg?style=for-the-badge&logo=apple&logoColor=white&labelColor=222222&color=white
 [Apple-url]: https://developer.apple.com/metal/
+[NixOS-shield]: https://img.shields.io/badge/NIX-%23008080.svg?style=for-the-badge&logo=NixOS&logoColor=5277C3&labelColor=222222&color=5277C3
+[NixOS-url]: https://nixos.org/
+[CMake-shield]: https://img.shields.io/badge/CMake-%23008080.svg?style=for-the-badge&logo=cmake&logoColor=008FBA&labelColor=222222&color=008FBA
+[CMake-url]: https://cmake.org/
+[Codecov-shield]: https://img.shields.io/badge/codecov-%23008080.svg?style=for-the-badge&logo=codecov&logoColor=FF0077&labelColor=222222&color=FF0077
+[GNU-Make-shield]: https://img.shields.io/badge/GNU%20Make-%23008080.svg?style=for-the-badge&logo=gnu&logoColor=A42E2B&labelColor=222222&color=A42E2B
+[GNU-Make-url]: https://www.gnu.org/software/make/
+[Codecov-url]: https://codecov.io/
 [github-actions-shield]: https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=2671E5&labelColor=222222&color=2671E5
 [github-actions-url]: https://github.com/features/actions
