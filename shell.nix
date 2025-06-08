@@ -4,6 +4,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     cmake # CMake build system
     cmake-format # CMake format tool
+    nixfmt-classic # Nix formatter
     clang # C++ compiler
     just # Just runner
   ];

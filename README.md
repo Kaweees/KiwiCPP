@@ -57,7 +57,7 @@ A template for creating C++ header-only libraries accelerated with CUDA/Apple Me
 
 ### Prerequisites
 
-Before attempting to build this project, make sure you have [GNU Make](https://www.gnu.org/software/make/), and [CMake](https://cmake.org) installed on your machine. These can be also installed via the project's [Nix](https://nixos.org/download.html) environment.
+Before attempting to build this project, make sure you have [Nix](https://nixos.org/download.html) with [Flake](https://nixos.wiki/wiki/Flakes) support installed on your machine.
 
 Additionally, if you wish to utilize the GPU acceleration features, you will need to have the [CUDA Toolkit](https://developer.nvidia.com/cuda-downloads) or [Apple Metal](https://developer.apple.com/metal/cpp/) installed on your machine.
 
@@ -75,13 +75,20 @@ To get a local copy of the project up and running on your machine, follow these 
 2. Install the project dependencies
 
    ```sh
-   nix-shell
+   nix-shell --max-jobs $(nproc) # Linux / Windows (WSL)
+   nix-shell --max-jobs $(sysctl -n hw.ncpu) # macOS
    ```
 
-3. Create a fresh build directory and navigate to it
+3. Build the project
 
    ```sh
-   just clean build
+   just build
+   ```
+
+4. Run the project
+
+   ```sh
+   just run <package_name>
    ```
 
 <!-- PROJECT FILE STRUCTURE -->
@@ -100,7 +107,7 @@ graphics/
 
 ## License
 
-The source code for my website is distributed under the terms of the GNU General Public License v3.0, as I firmly believe that collaborating on free and open-source software fosters innovations that mutually and equitably beneficial to both collaborators and users alike. See [`LICENSE`](./LICENSE) for details and more information.
+The source code for [Kaweees/kiwiCPP](https://github.com/Kaweees/kiwiCPP) is distributed under the terms of the GNU General Public License v3.0, as I firmly believe that collaborating on free and open-source software fosters innovations that mutually and equitably beneficial to both collaborators and users alike. See [`LICENSE`](./LICENSE) for details and more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
