@@ -41,7 +41,7 @@ format:
   @echo "Formatting..."
   @chmod +x ./scripts/format.sh
   @./scripts/format.sh format
-  @cmake-format -i CMakeLists.txt
+  @cmake-format -i $(find . -name "CMakeLists.txt")
   @nixfmt .
 
 # Generate documentation
