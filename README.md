@@ -95,7 +95,7 @@ To get a local copy of the project up and running on your machine, follow these 
 ## Project Structure
 
 ```sh
-graphics/
+KiwiCPP/
 ├── .github/                       - GitHub Actions CI/CD workflows
 ├── include/                       - project header files
 ├── src/                           - project source files
