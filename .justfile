@@ -42,7 +42,7 @@ format:
   @chmod +x ./scripts/format.sh
   @./scripts/format.sh format
   @cmake-format -i $(find . -name "CMakeLists.txt")
-  @nixfmt .
+  @find . -name "*.nix" -type f -exec nixfmt {} \;
 
 # Generate documentation
 docs:
