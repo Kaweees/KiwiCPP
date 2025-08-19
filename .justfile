@@ -6,6 +6,7 @@ alias b := build
 alias r := run
 alias t := test
 alias c := clean
+alias ch := check
 alias f := format
 alias d := docs
 
@@ -35,6 +36,11 @@ clean:
   @echo "Cleaning..."
   @rm -rf build
   @rm -rf target
+
+# Run code quality tools
+check:
+  @echo "Running code quality tools..."
+  @cppcheck --enable=all --suppress=missingInclude --suppress=unusedFunction --error-exitcode=1 include/kiwigl
 
 # Format the project
 format:

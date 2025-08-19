@@ -5,6 +5,7 @@
 !.editorconfig
 !.gitattributes
 !.gitignore
+!.gitmodules
 !.justfile
 !CMakeLists.txt
 !.clang-format

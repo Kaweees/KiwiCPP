@@ -34,6 +34,7 @@ format() {
     return 1
   fi
 }
+
 # Main script logic
 set -e # Exit on error
 case "$1" in

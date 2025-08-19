@@ -5,10 +5,10 @@
 pkgs.mkShell {
   buildInputs = with pkgs; [
     clang # C++ compiler
+    cppcheck # C++ linter
     cmake # CMake build system
     cmake-format # CMake format tool
     nixfmt # Nix formatter
-    nixfmt-tree # Nix formatter tree
     just # Just runner
   ];
 
