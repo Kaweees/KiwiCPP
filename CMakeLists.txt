@@ -7,7 +7,7 @@ project(
   LANGUAGES CXX)
 
 # Set C++ standard
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -ffast-math")
 
@@ -58,7 +58,9 @@ else()
   if(CMAKE_CUDA_COMPILER)
     message(STATUS "CUDA found. Building with CUDA support")
     enable_language(CUDA)
-    set(CMAKE_CUDA_STANDARD 14)
+    set(CMAKE_CUDA_STANDARD 20)
+    set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+    set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -O3 --use_fast_math")
     find_package(CUDA REQUIRED)
     include_directories(${CUDA_INCLUDE_DIRS})
     add_compile_definitions("__CUDA__")
