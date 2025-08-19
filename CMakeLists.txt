@@ -60,6 +60,7 @@ else()
     enable_language(CUDA)
     set(CMAKE_CUDA_STANDARD 20)
     set(CMAKE_CUDA_STANDARD_REQUIRED ON)
+    set(CMAKE_CUDA_ARCHITECTURES native)
     set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -O3 --use_fast_math")
     target_include_directories(
       ${PROJECT_NAME} INTERFACE ${CMAKE_CUDA_IMPLICIT_INCLUDE_DIRECTORIES})

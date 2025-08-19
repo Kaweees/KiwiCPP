@@ -1,7 +1,9 @@
 *
 
 !.github/
+!.github/**/
 !assets/
+!assets/**/
 !.editorconfig
 !.gitattributes
 !.gitignore
@@ -13,11 +15,16 @@
 !LICENSE
 !README.md
 
-!include/
-!include/**/
+!docs/
+!docs/**/
 !examples/
 !examples/**/
+!include/
+!include/**/
 !scripts/
+!scripts/**/
+!tests/
+!tests/**/
 
 !*.md
 !*.svg

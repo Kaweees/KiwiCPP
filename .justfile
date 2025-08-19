@@ -14,13 +14,16 @@ alias d := docs
 default:
   @just --list
 
+# Get the number of cores
+CORES := if os() == "macos" { `sysctl -n hw.ncpu` } else if os() == "linux" { `nproc` } else { "1" }
+
 # Build the project
 build *build_type='Release':
   @mkdir -p build
   @echo "Configuring the build system..."
-  @cd build && cmake -S .. -B . -DCMAKE_BUILD_TYPE={{build_type}}
+  @cd build && cmake -S .. -B . -DCMAKE_BUILD_TYPE={{build_type}} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
   @echo "Building the project..."
-  @cd build && cmake --build . -j$(nproc)
+  @cd build && cmake --build . -j{{CORES}}
 
 # Run a package
 run *package='hello':
@@ -40,7 +43,7 @@ clean:
 # Run code quality tools
 check:
   @echo "Running code quality tools..."
-  @cppcheck --enable=all --suppress=missingInclude --suppress=unusedFunction --error-exitcode=1 include/kiwigl
+  @cppcheck --error-exitcode=1 --project=build/compile_commands.json -i build/_deps/
 
 # Format the project
 format:
