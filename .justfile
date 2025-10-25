@@ -26,19 +26,20 @@ build *build_type='Release':
   @cd build && cmake --build . -j{{CORES}}
 
 # Run a package
-run *package='hello':
-  @./target/release/{{package}}
+run package='demo' *args='':
+  @./target/release/{{package}} {{args}}
 
 # Run code quality tools
 test:
   @echo "Running tests..."
   @./target/release/kiwicpp_tests
 
+
 # Remove build artifacts and non-essential files
 clean:
   @echo "Cleaning..."
-  @rm -rf build
-  @rm -rf target
+  @find . -type d -name "build" -exec rm -rf {} +
+  @find . -type d -name "target" -exec rm -rf {} +
 
 # Run code quality tools
 check:

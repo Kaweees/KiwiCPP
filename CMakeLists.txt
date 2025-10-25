@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14 FATAL_ERROR) # Set the minimum required
+cmake_minimum_required(VERSION 3.30 FATAL_ERROR) # Set the minimum required
                                                  # version of CMake
 
 project(
@@ -9,7 +9,8 @@ project(
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -ffast-math")
+set(CMAKE_CXX_FLAGS
+    "${CMAKE_CXX_FLAGS} -O3 -ffast-math -pipe -fopenmp")
 
 # Library target
 add_library(${PROJECT_NAME} INTERFACE)
