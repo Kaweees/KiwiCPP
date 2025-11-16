@@ -34,7 +34,6 @@ test:
   @echo "Running tests..."
   @./target/release/kiwicpp_tests
 
-
 # Remove build artifacts and non-essential files
 clean:
   @echo "Cleaning..."
