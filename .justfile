@@ -18,7 +18,7 @@ default:
 CORES := if os() == "macos" { `sysctl -n hw.ncpu` } else if os() == "linux" { `nproc` } else { "1" }
 
 # Build the project
-build *build_type='Release':
+build *build_type="Release":
   @mkdir -p build
   @echo "Configuring the build system..."
   @cd build && cmake -S .. -B . -DCMAKE_BUILD_TYPE={{build_type}} -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
@@ -26,7 +26,7 @@ build *build_type='Release':
   @cd build && cmake --build . -j{{CORES}}
 
 # Run a package
-run package='demo' *args='':
+run package="demo" *args="":
   @./target/release/{{package}} {{args}}
 
 # Run code quality tools
@@ -37,6 +37,7 @@ test:
 # Remove build artifacts and non-essential files
 clean:
   @echo "Cleaning..."
+  @find . -type d -name ".cache" -exec rm -rf {} +
   @find . -type d -name "build" -exec rm -rf {} +
   @find . -type d -name "target" -exec rm -rf {} +
 
